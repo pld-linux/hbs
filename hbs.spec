@@ -1,6 +1,7 @@
 # TODO:
 # 	- add zsh and bash completions
 #	- check python requirements for real
+#	- maybe add some useful contrib scripts to the bindir?
 
 %define	_snap	20050303
 
@@ -8,7 +9,7 @@ Summary:	Hierophant Build System - a simple packaging system
 Summary(pl):	Hierophant Build System - prosty system pakietowania
 Name:		hbs
 Version:	%{_snap}
-Release:	1
+Release:	0.1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://dobremiasto.net/~hoppke/yellow_brown/Hierophant-%{version}.tar.gz
@@ -38,11 +39,6 @@ install -d $RPM_BUILD_ROOT%{_datadir}/contrib
 	DESTDIR=$RPM_BUILD_ROOT
 
 cp -af contrib $RPM_BUILD_ROOT%{_datadir}/%{name}/
-
-cat << EOF > $RPM_BUILD_ROOT/%{_bindir}/hbsreqs
-#!/bin/sh
-. %{_datadir}/%{name}/reqs.py \$*
-EOF
 
 %clean
 rm -rf $RPM_BUILD_ROOT
