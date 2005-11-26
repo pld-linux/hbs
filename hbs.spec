@@ -29,7 +29,8 @@ Prosty system pakietowania dla dystrybucji Linuksa podobnych do LFS.
 %setup -q -n Hierophant-%{version}
 
 %build
-%{__make}
+%{__make} \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -38,7 +39,7 @@ install -d $RPM_BUILD_ROOT%{_datadir}/contrib
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cp -af contrib $RPM_BUILD_ROOT%{_datadir}/%{name}/
+cp -af contrib $RPM_BUILD_ROOT%{_datadir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,8 +48,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}/
-%attr(750,root,root) %dir /etc/hbs/
+%{_datadir}/%{name}
+%attr(750,root,root) %dir /etc/hbs
 %attr(750,root,root) %dir /var/lib/hbs
 %attr(750,root,root) %dir /var/tmp/hbs
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/hbs/*
