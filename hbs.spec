@@ -6,7 +6,7 @@
 %define	_snap	20050303
 
 Summary:	Hierophant Build System - a simple packaging system
-Summary(pl):	Hierophant Build System - prosty system pakietowania
+Summary(pl.UTF-8):   Hierophant Build System - prosty system pakietowania
 Name:		hbs
 Version:	%{_snap}
 Release:	0.1
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A simple packaging system for LFS-like Linux distributions.
 
-%description -l pl
+%description -l pl.UTF-8
 Prosty system pakietowania dla dystrybucji Linuksa podobnych do LFS.
 
 %prep
