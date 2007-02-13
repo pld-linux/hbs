@@ -6,7 +6,7 @@
 %define	_snap	20050303
 
 Summary:	Hierophant Build System - a simple packaging system
-Summary(pl.UTF-8):   Hierophant Build System - prosty system pakietowania
+Summary(pl.UTF-8):	Hierophant Build System - prosty system pakietowania
 Name:		hbs
 Version:	%{_snap}
 Release:	0.1
